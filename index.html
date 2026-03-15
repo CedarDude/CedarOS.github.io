@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cedar OS - Home</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #222222;
+            font-family: monospace;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #000000;
+            text-decoration: underline;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #000000;
+        }
+
+        .warning-box {
+            border: 2px solid #cc0000;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fff0f0;
+            color: #aa0000;
+        }
+
+        .info-box {
+            border: 2px solid #999999;
+            padding: 20px;
+            margin: 20px 0;
+            background: #f4f4f4;
+            color: #444444;
+        }
+
+        .btn {
+            background: #008800;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid #000000;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #00cc00;
+            color: #000000;
+        }
+
+        code {
+            background: #eeeeee;
+            color: #006600;
+            padding: 5px;
+            display: inline-block;
+            margin-top: 5px;
+            border: 1px solid #cccccc;
+        }
+
+        pre {
+            background: #eeeeee;
+            color: #006600;
+            text-align: left;
+            padding: 15px;
+            border: 1px solid #bbbbbb;
+            overflow-x: auto;
+        }
+        
+        strong {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cedar-OS</h1>
+        <p>A Lite, Free, Open Source Operating System, Made From Scratch.</p>
+
+        <div class="info-box">
+            <strong>Note:</strong> This OS is in pre-release, it will improve over time.
+        </div>
+
+        <div class="warning-box">
+            <strong>WARNING:</strong> This OS may be unstable on real computers. 
+            Try to run in QEMU as we still have not tested it on real hardware.
+        </div>
+
+        <div>
+            <a href="https://github.com/CedarDude/Cedar-OS" class="btn">GITHUB REPO</a>
+            <a href="https://github.com/CedarDude/Cedar-OS/releases/tag/os1" class="btn">DOWNLOAD IMG</a>
+        </div>
+
+        <hr>
+
+        <h2>How to Compile</h2>
+        <p>Written in x86 Assembly and C. Requires <code>NASM</code>.</p>
+        <pre># Run the build script
+./build.sh</pre>
+
+        <h2>How to Run</h2>
+        <p>Use QEMU to run the virtual machine. Turning it into an ISO for <bold>vmware or real hardware </bold>isnt avaible and not recommended yet.</p>
+        
+        <p><strong>Standard Run:</strong></p>
+        <code>qemu-system-i386 -fda build/cedar.img</code>
+
+        <p><strong>Debug:</strong></p>
+        <code>qemu-system-i386 -fda build/cedar.img -d int -D fresh_test.txt -M smm=off -no-reboot -no-shutdown</code>
+    </div>
+
+    <footer style="margin-top: 20px; font-size: 0.8rem; background-color: #008689; color: white;">
+        <p>Cedar Operating System Project - 2026 &copy;, all right reserved.</br></p>
+    </footer>
+
+</body>
+</html>
